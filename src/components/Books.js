@@ -1,8 +1,13 @@
 import { useQuery } from '@apollo/client'
+import { useEffect, useState } from 'react'
 import { ALL_BOOKS } from '../defs/queries'
 
 const Books = (props) => {
   const books = useQuery(ALL_BOOKS)
+  const [booksList,setBooks] = useState('')
+
+
+
   if (books.loading) {
     return <div>loading...</div>
   }

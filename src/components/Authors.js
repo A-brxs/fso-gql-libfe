@@ -1,16 +1,18 @@
 import { useQuery } from '@apollo/client'
+import { useEffect, useState } from 'react'
 import { ALL_AUTHORS} from '../defs/queries'
 
 const Authors = (props) => {
 
   const authors = useQuery(ALL_AUTHORS)
+
+
   if (authors.loading) {
     return <div>loading...</div>
   }
   if (!props.show) {
     return null
   }
-  console.log('authors; ',authors)
 
   return (
     <div>
